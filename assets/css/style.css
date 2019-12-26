@@ -16,7 +16,7 @@ body {
 .coloredWatches {
   transition: all 1s ease;
   position: absolute;
-  width: 36%;
+  width: 40%;
   top: 10vw;
   left: 36.3vw;
   opacity: 0;
@@ -41,9 +41,17 @@ body {
   border-radius: 50%;
   cursor: pointer;
   /* border: 0.2vw solid #f2dbac; */
+  transition: 0.5s;
+  border: 0px solid gray;
+  box-sizing: border-box;
+}
+.colorChangeButton:hover{
+  transform: scale(1.2) !important;
+  border: 1px solid gray !important;
 }
 
 .colorChangeBG {
+  pointer-events: none;
   position: absolute;
   width: 6.1vw;
   transition: 0.5s ease;
@@ -54,19 +62,19 @@ body {
 }
 
 .red {
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) -44%, rgba(255, 129, 104, 1) 60%, rgba(10, 89, 93, 1) 100%);
+  background: rgba(255, 129, 104, 1);
 }
 
 .brown {
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) -44%, rgba(187, 239, 219, 1) 60%, rgba(102, 45, 0, 1) 100%);
+  background: rgba(187, 239, 219, 1);
 }
 
 .purple {
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) -44%, rgba(255, 227, 171, 1) 60%, rgba(39, 9, 95, 1) 100%);
+  background: rgba(187, 193, 239, 1);
 }
 
 .gray {
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) -44%, rgba(187, 193, 239, 1) 60%, rgba(51, 51, 51, 1) 100%);
+  background: rgba(255, 227, 171, 1);
 }
 
 .colorChangeBG:hover {

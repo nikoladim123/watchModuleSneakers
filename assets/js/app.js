@@ -3,6 +3,8 @@ var colorChangeButton = document.getElementsByClassName('colorChangeButton');
 
 for (var i = 0; i < colorChangeButton.length; i++) {
   colorChangeButton[i].addEventListener('click',(e)=>{
+    stopInter();
+    colorChangeBGautoFun(e);
     for (var i = 0; i < coloredWatches.length; i++) {
       coloredWatches[i].style.opacity = '0';
     };
@@ -13,24 +15,47 @@ for (var i = 0; i < colorChangeButton.length; i++) {
 
 
 var iterWatch = 0;
-setInterval(function () {
-  for (var i = 0; i < coloredWatches.length; i++) {
-    coloredWatches[i].style.opacity = '0';
-  };
-  coloredWatches[iterWatch % 4].style.opacity = '1';
-  colorChangeBGautoFun();
-  iterWatch++;
-}, 2000);
+var intVar;
+function startInter() {
+  intVar =
+  setInterval(function () {
+    for (var i = 0; i < coloredWatches.length; i++) {
+      coloredWatches[i].style.opacity = '0';
+    };
+    coloredWatches[iterWatch % 4].style.opacity = '1';
+    colorChangeBGautoFun();
+    iterWatch++;
+  }, 2000);
+}
+
+var myStopIter;
+function stopInter() {
+  clearInterval(intVar);
+  clearTimeout(myStopIter);
+  myStopIter =
+  setTimeout(function () {
+    startInter();
+  }, 1500);
+}
+
+startInter();
 
 
 // colorChangeBG
 var colorChangeBG = document.getElementsByClassName('colorChangeBG');
 
-function colorChangeBGautoFun() {
+function colorChangeBGautoFun(e) {
   for (var i = 0; i < colorChangeBG.length; i++) {
-    colorChangeBG[i].style.left = '-3vw';
-    colorChangeBG[i].style.top = '-3vw';
+    colorChangeButton[i].style.transform = 'scale(1)';
+    colorChangeButton[i].style.border = '0px solid gray';
   }
-  colorChangeBG[iterWatch % 4].style.top = '-2.5vw';
-  colorChangeBG[iterWatch % 4].style.left = '-2.5vw';
+  if (e) {
+    e.target.style.border = '1px solid gray';
+    e.target.style.transform = 'scale(1.2)';
+    console.log(e.target);
+    return 0;
+  }
+  colorChangeButton[iterWatch % 4].style.transform = 'scale(1.2)';
+  colorChangeButton[iterWatch % 4].style.border = '1px solid gray';
+
 }
