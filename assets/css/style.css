@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  background: black;
+}
+
+.watchMainContainer {
+  position: relative;
+  margin-top: -3vw;
+}
+
+.watchesBG {
+  width: 100%;
+  position: relative;
+}
+
+.coloredWatches {
+  transition: all 1s ease;
+  position: absolute;
+  width: 36%;
+  top: 10vw;
+  left: 36.3vw;
+  opacity: 0;
+}
+
+.coloredWatches:nth-child(5) {}
+
+.colorChangeContainer {
+  position: absolute;
+  top: 18vw;
+  right: 24vw;
+  transform: rotate(5deg);
+}
+
+.colorChangeButton {
+  margin-bottom: 0.45vw;
+  position: relative;
+  width: 2.25vw;
+  height: 2.25vw;
+  /* border: 1px solid blue; */
+  overflow: hidden;
+  border-radius: 50%;
+  cursor: pointer;
+  /* border: 0.2vw solid #f2dbac; */
+}
+
+.colorChangeBG {
+  position: absolute;
+  width: 6.1vw;
+  transition: 0.5s ease;
+  height: 6.1vw;
+  top: -3vw;
+  left: -3vw;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) -44%, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 1) 100%);
+}
+
+.red {
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) -44%, rgba(255, 129, 104, 1) 60%, rgba(10, 89, 93, 1) 100%);
+}
+
+.brown {
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) -44%, rgba(187, 239, 219, 1) 60%, rgba(102, 45, 0, 1) 100%);
+}
+
+.purple {
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) -44%, rgba(255, 227, 171, 1) 60%, rgba(39, 9, 95, 1) 100%);
+}
+
+.gray {
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) -44%, rgba(187, 193, 239, 1) 60%, rgba(51, 51, 51, 1) 100%);
+}
+
+.colorChangeBG:hover {
+  top: -2.5vw !important;
+  left: -2.5vw !important;
+}
